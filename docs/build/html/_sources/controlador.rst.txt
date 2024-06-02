@@ -1,0 +1,6 @@
+Controler.py
+==========================
+
+
+El módulo `Controler` inicializa la aplicación de SpotMusic.
+

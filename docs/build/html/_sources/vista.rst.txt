@@ -1,0 +1,13 @@
+Vista.py
+==========================
+
+El módulo `Vista` define la interfaz gráfica de usuario de SpotMusic usando `tkinter`
+
+
+
+
+Métodos
+--------------------------
+
+- ``__init__``: Inicializa la interfaz gráfica de la aplicación.
+- ``actualizar``: Actualiza los campos de entrada con la selección actual del TreeView.

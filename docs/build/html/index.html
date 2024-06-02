@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Documentación de SpotMusic &#8212; documentación de SPOTMUSIC - 0.1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/zerovm.css?v=bbc7d13e" />
+    <script src="_static/documentation_options.js?v=9c9b61ad"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=efdbd0b9"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="nav-item nav-item-0"><a href="#">documentación de SPOTMUSIC - 0.1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Documentación de SpotMusic</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="documentacion-de-spotmusic">
+<h1>Documentación de SpotMusic<a class="headerlink" href="#documentacion-de-spotmusic" title="Link to this heading">¶</a></h1>
+<p><strong>SPOTMUSIC</strong> es una interfaz que permite la creacion de PLAYLIST.</p>
+<p>En las PLAYLIST se pueden agregar/modificar/eliminar canciones y sus respectivos artistas</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Proyecto aun en construcción, correspodiente a la diplomatura de python en la UTN 2024.</p>
+</div>
+<p><strong>SPOTMUSIC</strong> posee una estructura MVC, por lo que contiene 3 modulos.</p>
+</section>
+<section id="modelo-py">
+<h1>Modelo.py<a class="headerlink" href="#modelo-py" title="Link to this heading">¶</a></h1>
+<p>El módulo <cite>Modelo</cite> proporciona la clase <cite>SpotMusicModel</cite> para gestionar las listas de reproducción, artistas y canciones en una base de datos SQLite.</p>
+<section id="metodos">
+<h2>Métodos<a class="headerlink" href="#metodos" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code>: Inicializa el objeto <cite>SpotMusicModel</cite>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conexion</span></code>: Establece una conexión con la base de datos SQLite.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">crear_tabla</span></code>: Crea una tabla en la base de datos si no existe.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">consultar_tabla</span></code>: Verifica si una tabla existe en la base de datos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">consultar_cancion</span></code>: Consulta la existencia de una canción en una lista de reproducción por nombre de artista y canción en la base de datos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alta</span></code>: Añade una canción a una lista de reproducción en la base de datos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">actualizar_treeview</span></code>: Actualiza el widget TreeView con datos de la base de datos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">execute_query</span></code>: Ejecuta una consulta en la base de datos y actualiza el widget TreeView.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">consultar</span></code>: Recupera datos de la base de datos basados en la lista de reproducción, artista o nombre de la canción.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">consultar_lista_playlist</span></code>: Recupera una lista de listas de reproducción de la base de datos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">actualizar_playlist</span></code>: Añade una canción a una lista de reproducción en la base de datos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">modificar</span></code>: Modifica una canción en una lista de reproducción en la base de datos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">borrar</span></code>: Elimina una canción de una lista de reproducción en la base de datos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">borrar_playlist</span></code>: Elimina una lista de reproducción de la base de datos.</p></li>
+</ul>
+</section>
+</section>
+<section id="vista-py">
+<h1>Vista.py<a class="headerlink" href="#vista-py" title="Link to this heading">¶</a></h1>
+<p>El módulo <cite>Vista</cite> define la interfaz gráfica de usuario de SpotMusic usando <cite>tkinter</cite></p>
+<section id="id1">
+<h2>Métodos<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code>: Inicializa la interfaz gráfica de la aplicación.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">actualizar</span></code>: Actualiza los campos de entrada con la selección actual del TreeView.</p></li>
+</ul>
+</section>
+</section>
+<section id="controler-py">
+<h1>Controler.py<a class="headerlink" href="#controler-py" title="Link to this heading">¶</a></h1>
+<p>El módulo <cite>Controler</cite> inicializa la aplicación de SpotMusic.</p>
+</section>
+<section id="interfaz-grafica">
+<h1>Interfaz gráfica<a class="headerlink" href="#interfaz-grafica" title="Link to this heading">¶</a></h1>
+<a class="reference internal image-reference" href="interfazgraficaspotmusic.png"><img alt="interfazgraficaspotmusic.png" src="interfazgraficaspotmusic.png" style="width: 900px; height: 300px;" />
+</a>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="#">Tabla de contenido</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Documentación de SpotMusic</a></li>
+<li><a class="reference internal" href="#modelo-py">Modelo.py</a><ul>
+<li><a class="reference internal" href="#metodos">Métodos</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vista-py">Vista.py</a><ul>
+<li><a class="reference internal" href="#id1">Métodos</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#controler-py">Controler.py</a></li>
+<li><a class="reference internal" href="#interfaz-grafica">Interfaz gráfica</a></li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Esta página</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Mostrar el código</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice General"
+             >índice</a></li>
+        <li class="nav-item nav-item-0"><a href="#">documentación de SPOTMUSIC - 0.1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Documentación de SpotMusic</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Oralip Sepúlveda.
+      Creado usando <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>
